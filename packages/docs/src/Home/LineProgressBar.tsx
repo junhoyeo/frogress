@@ -38,16 +38,12 @@ export type LineProgressBarProps<T extends number> = {
   label?: (value: Percent<T>) => void
 }
 
-export const LineProgressBar = <T extends number>({
-  percent,
-  rounded = 0,
-  height = 16,
-  width,
-  label,
-}: LineProgressBarProps<T>) => {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-
+const useContainerWidth = (
+  containerRef: React.MutableRefObject<HTMLDivElement>,
+  width: number | undefined,
+) => {
   const [containerWidth, setContainerWidth] = useState<number>(0)
+
   useEffect(() => {
     if (!containerRef.current) {
       return
@@ -57,7 +53,20 @@ export const LineProgressBar = <T extends number>({
       return
     }
     setContainerWidth(containerRef.current.offsetWidth)
-  }, [])
+  }, [width])
+
+  return containerWidth
+}
+
+export const LineProgressBar = <T extends number>({
+  percent,
+  rounded = 0,
+  height = 16,
+  width,
+  label,
+}: LineProgressBarProps<T>) => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const containerWidth = useContainerWidth(containerRef, width)
 
   const progressWidth = useMemo(
     () => containerWidth + (containerWidth / 100) * percent,
