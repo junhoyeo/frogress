@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import styled, { css } from 'styled-components'
 
 // TODO: use declaration in package
 // prettier-ignore
@@ -34,6 +34,7 @@ export type LineProgressBarProps<T extends number> = {
   percent: Percent<T>
   rounded?: number
   height?: number
+  width?: number
   label?: (value: Percent<T>) => void
 }
 
@@ -41,11 +42,42 @@ export const LineProgressBar = <T extends number>({
   percent,
   rounded = 0,
   height = 16,
+  width,
   label,
 }: LineProgressBarProps<T>) => {
+  const containerRef = useRef<HTMLDivElement | null>(null)
+
+  const [containerWidth, setContainerWidth] = useState<number>(0)
+  useEffect(() => {
+    if (!containerRef.current) {
+      return
+    }
+    if (width !== undefined) {
+      setContainerWidth(width)
+      return
+    }
+    setContainerWidth(containerRef.current.offsetWidth)
+  }, [])
+
+  const progressWidth = useMemo(
+    () => containerWidth + (containerWidth / 100) * percent,
+    [containerWidth, percent],
+  )
+
   return (
-    <Container style={{ height, borderRadius: rounded }}>
-      <Progress percent={percent} style={{ borderRadius: rounded }} />
+    <Container
+      ref={containerRef}
+      style={{
+        width,
+        height,
+        borderRadius: rounded,
+      }}
+    >
+      <Progress
+        containerWidth={containerWidth}
+        progressWidth={progressWidth}
+        style={{ borderRadius: rounded }}
+      />
       {label?.(percent)}
     </Container>
   )
@@ -60,17 +92,22 @@ const Container = styled.div`
 `
 
 type ProgressProps = {
-  percent: number
+  containerWidth: number
+  progressWidth: number
 }
 const Progress = styled.div<ProgressProps>`
   position: absolute;
   height: 100%;
-  width: calc(${({ percent }) => percent}% + 500px);
-  left: -500px;
   background-image: linear-gradient(
     to right,
     #12d8fa 25%,
     #43a4ff 85%,
     #3179ff 98%
   );
+
+  ${({ containerWidth, progressWidth }) =>
+    css`
+      left: ${-containerWidth}px;
+      width: ${progressWidth}px;
+    `};
 `
