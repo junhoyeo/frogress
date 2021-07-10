@@ -1,0 +1,11 @@
+{
+  "name": "@frogress/line",
+  "version": "1.0.0",
+  "author": "Junho Yeo <hanaro0704@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/junhoyeo/frogress.git",
+    "directory": "packages/line"
+  }
+}
