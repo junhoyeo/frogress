@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     word-break: keep-all;
+    font-family: 'Inter', sans-serif;
   }
 
   body {
