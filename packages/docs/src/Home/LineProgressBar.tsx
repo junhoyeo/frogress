@@ -34,16 +34,19 @@ export type LineProgressBarProps<T extends number> = {
   percent: Percent<T>
   rounded?: number
   height?: number
+  label?: (value: Percent<T>) => void
 }
 
 export const LineProgressBar = <T extends number>({
   percent,
   rounded = 0,
   height = 16,
+  label,
 }: LineProgressBarProps<T>) => {
   return (
     <Container style={{ height, borderRadius: rounded }}>
       <Progress percent={percent} style={{ borderRadius: rounded }} />
+      {label?.(percent)}
     </Container>
   )
 }

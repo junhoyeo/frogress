@@ -20,6 +20,14 @@ export const HomePage = () => {
           <LineProgressBar percent={value} rounded={36} height={36} />
         ))}
       </ProgressList>
+      <ProgressList>
+        <LineProgressBar
+          label={(value) => <Label>{`${value}%`}</Label>}
+          percent={45}
+          rounded={36}
+          height={36}
+        />
+      </ProgressList>
     </Container>
   )
 }
@@ -39,4 +47,16 @@ const ProgressList = styled.div`
   & > div {
     margin-top: 16px;
   }
+`
+
+const Label = styled.span`
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
 `
