@@ -39,19 +39,6 @@ export const HomePage = () => {
         </HighlightedCode>
       </Section>
       <Section>
-        <Heading>Sizing</Heading>
-        <ProgressBarList>
-          <LineProgressBar percent={25} width={150} />
-          <LineProgressBar percent={25} width={200} />
-        </ProgressBarList>
-        <HighlightedCode>
-          {dedent`
-            <LineProgressBar percent={25} width={150} />
-            <LineProgressBar percent={25} width={200} />
-          `}
-        </HighlightedCode>
-      </Section>
-      <Section>
         <Heading>Stripes</Heading>
         <ProgressBarList>
           <LineProgressBar stripe percent={25} />
@@ -73,6 +60,19 @@ export const HomePage = () => {
         <HighlightedCode>
           {dedent`
             <LineProgressBar percent={value} rounded={36} height={36} />
+          `}
+        </HighlightedCode>
+      </Section>
+      <Section>
+        <Heading>Sizing</Heading>
+        <ProgressBarList>
+          <LineProgressBar percent={25} width={150} />
+          <LineProgressBar percent={25} width={200} />
+        </ProgressBarList>
+        <HighlightedCode>
+          {dedent`
+            <LineProgressBar percent={25} width={150} />
+            <LineProgressBar percent={25} width={200} />
           `}
         </HighlightedCode>
       </Section>
