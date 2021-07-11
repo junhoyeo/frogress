@@ -1,4 +1,14 @@
 {
   "presets": ["next/babel"],
-  "plugins": [["styled-components", { "ssr": true }]]
+  "plugins": [
+    ["styled-components", { "ssr": true }],
+    [
+      "prismjs",
+      {
+        "languages": ["tsx"],
+        "plugins": ["line-numbers", "show-language"],
+        "css": true
+      }
+    ]
+  ]
 }
