@@ -1,8 +1,5 @@
-import 'dracula-prism/dist/css/dracula-prism.css'
-
 import dedent from 'dedent'
-import prism from 'prismjs'
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { HighlightedCode } from '../components/HighlightedCode'
@@ -14,10 +11,6 @@ import { Section } from './Section'
 
 const roundBarPercents = [85, 62, 48, 32, 16, 8, 5, 1, 0]
 export const HomePage = () => {
-  useEffect(() => {
-    prism.highlightAll()
-  }, [])
-
   return (
     <Container>
       <Header />

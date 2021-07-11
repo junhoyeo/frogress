@@ -1,19 +1,26 @@
+import Highlight, { defaultProps } from 'prism-react-renderer'
 import React from 'react'
-import styled from 'styled-components'
 
-export const HighlightedCode: React.FC = ({ children }) => {
-  return (
-    <div>
-      <HighlightedCodePre>
-        <code className="language-tsx">{children}</code>
-      </HighlightedCodePre>
-    </div>
-  )
+type HighlightedCodeProps = {
+  children: string
 }
 
-const HighlightedCodePre = styled.pre`
-  && {
-    margin: 0;
-    margin-top: 16px;
-  }
-`
+export const HighlightedCode: React.FC<HighlightedCodeProps> = ({
+  children,
+}) => {
+  return (
+    <Highlight {...defaultProps} code={children} language="tsx">
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={style}>
+          {tokens.map((line, i) => (
+            <div {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
+  )
+}
