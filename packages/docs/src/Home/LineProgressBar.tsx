@@ -76,8 +76,8 @@ export const LineProgressBar = <T extends number>({
   const containerRef = useRef<HTMLDivElement>(null)
   const containerWidth = useContainerWidth(containerRef, width)
 
-  const progressWidth = useMemo(
-    () => containerWidth + (containerWidth / 100) * percent,
+  const progressOffset = useMemo(
+    () => -(containerWidth / 100) * (100 - percent),
     [containerWidth, percent],
   )
 
@@ -95,8 +95,8 @@ export const LineProgressBar = <T extends number>({
       <Progress
         className="progress"
         containerWidth={containerWidth}
-        progressWidth={progressWidth}
         direction={direction}
+        offset={progressOffset}
         style={{ borderRadius: rounded, background: progressColor }}
       >
         {stripe && <Stripe />}
@@ -116,23 +116,23 @@ const Container = styled.div`
 
 type ProgressProps = {
   containerWidth: number
-  progressWidth: number
   direction?: 'left' | 'right'
+  offset: number
 }
 const Progress = styled.div<ProgressProps>`
   position: absolute;
   height: 100%;
-  background-image: linear-gradient(
-    to right,
-    #12d8fa 25%,
-    #43a4ff 85%,
-    #3179ff 98%
-  );
 
-  ${({ containerWidth, progressWidth, direction }) =>
+  ${({ containerWidth, direction, offset }) =>
     css`
-      width: ${progressWidth}px;
-      ${direction}: ${-containerWidth}px;
+      background-image: linear-gradient(
+        to ${direction === 'left' ? 'right' : 'left'},
+        #12d8fa 25%,
+        #43a4ff 85%,
+        #3179ff 98%
+      );
+      width: ${containerWidth}px;
+      ${direction}: ${offset}px;
     `};
 `
 
