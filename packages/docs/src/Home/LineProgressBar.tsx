@@ -77,6 +77,7 @@ export const LineProgressBar = <T extends number>({
 
   return (
     <Container
+      className="container"
       ref={containerRef}
       style={{
         width,
@@ -85,6 +86,7 @@ export const LineProgressBar = <T extends number>({
       }}
     >
       <Progress
+        className="progress"
         containerWidth={containerWidth}
         progressWidth={progressWidth}
         style={{ borderRadius: rounded }}
