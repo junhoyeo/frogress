@@ -36,6 +36,7 @@ export type LineProgressBarProps<T extends number> = {
   stripe?: boolean
   height?: number
   width?: number
+  direction?: 'left' | 'right'
   label?: (value: Percent<T>) => void
 }
 
@@ -65,6 +66,7 @@ export const LineProgressBar = <T extends number>({
   stripe,
   height = 16,
   width,
+  direction = 'left',
   label,
 }: LineProgressBarProps<T>) => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -89,6 +91,7 @@ export const LineProgressBar = <T extends number>({
         className="progress"
         containerWidth={containerWidth}
         progressWidth={progressWidth}
+        direction={direction}
         style={{ borderRadius: rounded }}
       >
         {stripe && <Stripe />}
@@ -109,6 +112,7 @@ const Container = styled.div`
 type ProgressProps = {
   containerWidth: number
   progressWidth: number
+  direction?: 'left' | 'right'
 }
 const Progress = styled.div<ProgressProps>`
   position: absolute;
@@ -120,10 +124,10 @@ const Progress = styled.div<ProgressProps>`
     #3179ff 98%
   );
 
-  ${({ containerWidth, progressWidth }) =>
+  ${({ containerWidth, progressWidth, direction }) =>
     css`
-      left: ${-containerWidth}px;
       width: ${progressWidth}px;
+      ${direction}: ${-containerWidth}px;
     `};
 `
 

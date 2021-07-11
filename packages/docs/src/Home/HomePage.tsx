@@ -77,6 +77,20 @@ export const HomePage = () => {
         </HighlightedCode>
       </Section>
       <Section>
+        <Heading>Direction</Heading>
+        <Paragraph>Gradient color is not changed.</Paragraph>
+        <ProgressBarList>
+          <LineProgressBar percent={65} direction="left" />
+          <LineProgressBar percent={65} direction="right" />
+        </ProgressBarList>
+        <HighlightedCode>
+          {dedent`
+            <LineProgressBar percent={65} direction="left" />
+            <LineProgressBar percent={65} direction="right" />
+          `}
+        </HighlightedCode>
+      </Section>
+      <Section>
         <Heading>Label</Heading>
         <ProgressBarList>
           <LineProgressBar
@@ -119,6 +133,8 @@ const Label = styled.span`
   font-weight: bold;
   color: white;
 `
+
+const Paragraph = styled.p``
 
 const ProgressBarList = styled.div`
   width: 100%;
