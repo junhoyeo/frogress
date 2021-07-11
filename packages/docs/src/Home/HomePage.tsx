@@ -59,7 +59,12 @@ export const HomePage = () => {
         <Heading>Rounding</Heading>
         <ProgressBarList>
           {roundBarPercents.map((value) => (
-            <LineProgressBar percent={value} rounded={36} height={36} />
+            <LineProgressBar
+              key={value}
+              percent={value}
+              rounded={36}
+              height={36}
+            />
           ))}
         </ProgressBarList>
         <HighlightedCode highlightLines={[2]}>
