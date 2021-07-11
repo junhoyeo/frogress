@@ -21,7 +21,7 @@ export const HomePage = () => {
           <LineProgressBar percent={65} />
           <LineProgressBar percent={80} />
         </ProgressBarList>
-        <HighlightedCode>
+        <HighlightedCode highlightLines={[2]}>
           {dedent`
             import { LineProgressBar } from '@frogress/line'
 
@@ -41,9 +41,12 @@ export const HomePage = () => {
             containerColor="#f0d4da"
           />
         </ProgressBarList>
-        <HighlightedCode>
+        <HighlightedCode highlightLines={[2, 6, 7]}>
           {dedent`
-            <LineProgressBar percent={25} progressColor="#135ffb" />
+            <LineProgressBar
+              percent={25}
+              progressColor="#135ffb"
+            />
             <LineProgressBar
               percent={65}
               progressColor="linear-gradient(to right, #ff655b 60%, #fd297b)"
@@ -59,9 +62,13 @@ export const HomePage = () => {
             <LineProgressBar percent={value} rounded={36} height={36} />
           ))}
         </ProgressBarList>
-        <HighlightedCode>
+        <HighlightedCode highlightLines={[2]}>
           {dedent`
-            <LineProgressBar percent={value} rounded={36} height={36} />
+            <LineProgressBar
+              percent={value}
+              rounded={36}
+              height={36}
+            />
           `}
         </HighlightedCode>
       </Section>
@@ -69,11 +76,13 @@ export const HomePage = () => {
         <Heading>Stripes</Heading>
         <ProgressBarList>
           <LineProgressBar stripe percent={25} />
-          <LineProgressBar stripe percent={65} />
         </ProgressBarList>
-        <HighlightedCode>
+        <HighlightedCode highlightLines={[1]}>
           {dedent`
-            <LineProgressBar stripe percent={25} />
+            <LineProgressBar
+              stripe
+              percent={25}
+            />
           `}
         </HighlightedCode>
       </Section>
@@ -82,11 +91,17 @@ export const HomePage = () => {
         <ProgressBarList>
           <LineProgressBar percent={25} width={150} />
           <LineProgressBar percent={25} width={200} />
+          <LineProgressBar percent={25} width={400} height={24} />
         </ProgressBarList>
-        <HighlightedCode>
+        <HighlightedCode highlightLines={[4, 5]}>
           {dedent`
             <LineProgressBar percent={25} width={150} />
             <LineProgressBar percent={25} width={200} />
+            <LineProgressBar
+              percent={25}
+              width={400}
+              height={24}
+            />
           `}
         </HighlightedCode>
       </Section>
@@ -97,10 +112,16 @@ export const HomePage = () => {
           <LineProgressBar percent={65} direction="left" />
           <LineProgressBar percent={65} direction="right" />
         </ProgressBarList>
-        <HighlightedCode>
+        <HighlightedCode highlightLines={[2, 6]}>
           {dedent`
-            <LineProgressBar percent={65} direction="left" />
-            <LineProgressBar percent={65} direction="right" />
+            <LineProgressBar
+              percent={65}
+              direction="left"
+            />
+            <LineProgressBar
+              percent={65}
+              direction="right"
+            />
           `}
         </HighlightedCode>
       </Section>
