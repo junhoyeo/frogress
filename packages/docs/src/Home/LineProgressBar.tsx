@@ -33,6 +33,7 @@ export type Percent<Value extends number>
 export type LineProgressBarProps<T extends number> = {
   percent: Percent<T>
   rounded?: number
+  stripe?: boolean
   height?: number
   width?: number
   label?: (value: Percent<T>) => void
@@ -61,6 +62,7 @@ const useContainerWidth = (
 export const LineProgressBar = <T extends number>({
   percent,
   rounded = 0,
+  stripe,
   height = 16,
   width,
   label,
@@ -86,7 +88,9 @@ export const LineProgressBar = <T extends number>({
         containerWidth={containerWidth}
         progressWidth={progressWidth}
         style={{ borderRadius: rounded }}
-      />
+      >
+        {stripe && <Stripe />}
+      </Progress>
       {label?.(percent)}
     </Container>
   )
@@ -119,4 +123,20 @@ const Progress = styled.div<ProgressProps>`
       left: ${-containerWidth}px;
       width: ${progressWidth}px;
     `};
+`
+
+const Stripe = styled.div`
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1.5rem 1.5rem;
+  width: 100%;
+  height: 100%;
 `

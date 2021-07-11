@@ -21,6 +21,10 @@ export const HomePage = () => {
         <LineProgressBar percent={25} width={200} />
       </ProgressList>
       <ProgressList>
+        <LineProgressBar stripe percent={25} />
+        <LineProgressBar stripe percent={65} />
+      </ProgressList>
+      <ProgressList>
         {roundBarPercents.map((value) => (
           <LineProgressBar percent={value} rounded={36} height={36} />
         ))}
