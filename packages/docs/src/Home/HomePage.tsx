@@ -114,7 +114,7 @@ export const HomePage = () => {
             height={36}
           />
         </ProgressBarList>
-        <HighlightedCode>
+        <HighlightedCode highlightLines={[1]}>
           {dedent`
             <LineProgressBar
               label={(value: number) => <CustomLabelComponent percent={value} />}
