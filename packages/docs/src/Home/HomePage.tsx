@@ -44,6 +44,12 @@ export const HomePage = () => {
           <LineProgressBar percent={25} width={150} />
           <LineProgressBar percent={25} width={200} />
         </ProgressBarList>
+        <HighlightedCode>
+          {dedent`
+            <LineProgressBar percent={25} width={150} />
+            <LineProgressBar percent={25} width={200} />
+          `}
+        </HighlightedCode>
       </Section>
       <Section>
         <Heading>Stripes</Heading>
@@ -51,6 +57,11 @@ export const HomePage = () => {
           <LineProgressBar stripe percent={25} />
           <LineProgressBar stripe percent={65} />
         </ProgressBarList>
+        <HighlightedCode>
+          {dedent`
+            <LineProgressBar stripe percent={25} />
+          `}
+        </HighlightedCode>
       </Section>
       <Section>
         <Heading>Rounding</Heading>
@@ -59,6 +70,11 @@ export const HomePage = () => {
             <LineProgressBar percent={value} rounded={36} height={36} />
           ))}
         </ProgressBarList>
+        <HighlightedCode>
+          {dedent`
+            <LineProgressBar percent={value} rounded={36} height={36} />
+          `}
+        </HighlightedCode>
       </Section>
       <Section>
         <Heading>Label</Heading>
@@ -70,6 +86,16 @@ export const HomePage = () => {
             height={36}
           />
         </ProgressBarList>
+        <HighlightedCode>
+          {dedent`
+            <LineProgressBar
+              label={(value: number) => <CustomLabelComponent percent={value} />}
+              percent={45}
+              rounded={36}
+              height={36}
+            />
+          `}
+        </HighlightedCode>
       </Section>
       <Footer />
     </Container>
