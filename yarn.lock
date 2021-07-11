@@ -1425,9 +1425,12 @@ __metadata:
     "@types/react": ^17.0.11
     "@types/react-dom": ^17.0.8
     "@types/styled-components": ^5.1.10
+    babel-plugin-prismjs: ^2.1.0
     babel-plugin-styled-components: ^1.13.1
+    dracula-prism: ^2.1.4
     next: 11.0.1
     next-plugin-svgr: ^1.0.0
+    prismjs: ^1.24.1
     react: 17.0.2
     react-dom: 17.0.2
     styled-components: ^5.3.0
@@ -2448,6 +2451,15 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 4e06cb72a5bde563639d0af927b3fc733e20d1ae4e0d0ff09f4d0e3058f2b6e5eebf0d40420f9c9e4bc0d278f53c9e9d097509190c539836cef5fd8179490dff
+  languageName: node
+  linkType: hard
+
+"babel-plugin-prismjs@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "babel-plugin-prismjs@npm:2.1.0"
+  peerDependencies:
+    prismjs: ^1.18.0
+  checksum: 3c45099014009751b004fdcb7fad0ceb69b5a35781a7e38a25c443cc5f8d5b7b49ca3ee298c549905df2c31bfc6fbc676b8ca6d7b15118ebc63a2005abb159c8
   languageName: node
   linkType: hard
 
@@ -3472,6 +3484,13 @@ __metadata:
     dom-serializer: 0
     domelementtype: 1
   checksum: a5b2f01fb3ff626073e3c3b43fedcff34073fb059b1235ee31cd0b5690d826304f41bc3fd117f95d754a1666ac3a57d224b408d83dd4f1c4525fd5b636d8df6f
+  languageName: node
+  linkType: hard
+
+"dracula-prism@npm:^2.1.4":
+  version: 2.1.4
+  resolution: "dracula-prism@npm:2.1.4"
+  checksum: 1a553c64577a09d275c13d4dfddd4215dc6126e8b0aa9cf7dc36abd776f22e88730c610d6a9532e58d788d03299035209599e8ed1219c6c55b0e9200d50e242b
   languageName: node
   linkType: hard
 
@@ -6140,6 +6159,13 @@ __metadata:
     ansi-styles: ^5.0.0
     react-is: ^17.0.1
   checksum: 29baf8d88a35c04ef81e310e3e239c6fe4f5b0827c9bd8f660df78e94632a9677bd113a64be78cc95c52945a4369b85828f32559cfd86c1b591aa3cc39d0798d
+  languageName: node
+  linkType: hard
+
+"prismjs@npm:^1.24.1":
+  version: 1.24.1
+  resolution: "prismjs@npm:1.24.1"
+  checksum: 337ce5e07815b38aa8e2b71aa64dc821c1dbe38c5dba9451b0c210c19c139cc01145914920e222ae0f54b45e65523c3863899d0c7f19cdec202a03ccd268a09b
   languageName: node
   linkType: hard
 
