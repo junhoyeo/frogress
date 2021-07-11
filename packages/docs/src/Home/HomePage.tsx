@@ -39,14 +39,23 @@ export const HomePage = () => {
         </HighlightedCode>
       </Section>
       <Section>
-        <Heading>Stripes</Heading>
+        <Heading>Color</Heading>
         <ProgressBarList>
-          <LineProgressBar stripe percent={25} />
-          <LineProgressBar stripe percent={65} />
+          <LineProgressBar percent={25} progressColor="#135ffb" />
+          <LineProgressBar
+            percent={65}
+            progressColor="linear-gradient(to right, #ff655b, #fd297b)"
+            containerColor="#f0d4da"
+          />
         </ProgressBarList>
         <HighlightedCode>
           {dedent`
-            <LineProgressBar stripe percent={25} />
+            <LineProgressBar percent={25} progressColor="#135ffb" />
+            <LineProgressBar
+              percent={65}
+              progressColor="linear-gradient(to right, #ff655b 60%, #fd297b)"
+              containerColor="#f0d4da"
+            />
           `}
         </HighlightedCode>
       </Section>
@@ -60,6 +69,18 @@ export const HomePage = () => {
         <HighlightedCode>
           {dedent`
             <LineProgressBar percent={value} rounded={36} height={36} />
+          `}
+        </HighlightedCode>
+      </Section>
+      <Section>
+        <Heading>Stripes</Heading>
+        <ProgressBarList>
+          <LineProgressBar stripe percent={25} />
+          <LineProgressBar stripe percent={65} />
+        </ProgressBarList>
+        <HighlightedCode>
+          {dedent`
+            <LineProgressBar stripe percent={25} />
           `}
         </HighlightedCode>
       </Section>
