@@ -11,6 +11,9 @@ export const Header = () => {
         </TitleSegment>
         <TitleSegment>UI for React</TitleSegment>
       </Title>
+      <InstallCommandContainer>
+        <InstallCommand>$ yarn add @frogress/line</InstallCommand>
+      </InstallCommandContainer>
       <Button>View on GitHub</Button>
     </Container>
   )
@@ -61,4 +64,22 @@ const Button = styled.button`
     transform: scale(1.05);
     text-shadow: 0 2px 24px rgba(20, 156, 181, 0.85);
   }
+`
+
+const InstallCommandContainer = styled.div`
+  margin-top: 16px;
+  display: flex;
+  background-image: linear-gradient(to right, #1fa2ff, #12d8fa, #5ae293);
+  border-radius: 10px;
+  padding: 2px;
+`
+const InstallCommand = styled.span`
+  padding: 0 4px;
+  color: #343a40;
+  padding: 18px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  font-weight: bold;
+  font-family: Consolas, Monaco, andale mono, monospace;
 `
