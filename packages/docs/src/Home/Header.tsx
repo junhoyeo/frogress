@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { copyToClipboard } from './utils/clipboard'
+
 export const Header = () => {
+  const onClickCopyInstallCommand = () => {
+    const installCommand = 'yarn add @frogress/line'
+    copyToClipboard(installCommand)
+  }
+
   return (
     <Container>
       <Title>
@@ -11,7 +18,7 @@ export const Header = () => {
         </TitleSegment>
         <TitleSegment>UI for React</TitleSegment>
       </Title>
-      <InstallCommandContainer>
+      <InstallCommandContainer onClick={onClickCopyInstallCommand}>
         <InstallCommand>$ yarn add @frogress/line</InstallCommand>
       </InstallCommandContainer>
       <Button>View on GitHub</Button>
@@ -72,6 +79,12 @@ const InstallCommandContainer = styled.div`
   background-image: linear-gradient(to right, #1fa2ff, #12d8fa, #5ae293);
   border-radius: 10px;
   padding: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `
 const InstallCommand = styled.span`
   padding: 0 4px;
