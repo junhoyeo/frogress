@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@frogress/line": "1.0.0",
     "dedent": "^0.7.0",
     "next": "11.0.1",
     "prism-react-renderer": "^1.2.1",
