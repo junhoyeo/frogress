@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { copyToClipboard } from './utils/clipboard'
 
 export const Header = () => {
+  const [isCopied, setCopied] = useState<boolean>(false)
+
   const onClickCopyInstallCommand = () => {
     const installCommand = 'yarn add @frogress/line'
     copyToClipboard(installCommand)
+    setCopied(true)
   }
 
   return (
@@ -21,6 +24,11 @@ export const Header = () => {
       <InstallCommandContainer onClick={onClickCopyInstallCommand}>
         <InstallCommand>$ yarn add @frogress/line</InstallCommand>
       </InstallCommandContainer>
+      <TypographyImage
+        src={`/images/typography-${
+          !isCopied ? 'copy-to-clipboard' : 'copied'
+        }.png`}
+      />
       <Button>View on GitHub</Button>
     </Container>
   )
@@ -95,4 +103,9 @@ const InstallCommand = styled.span`
   backdrop-filter: blur(12px);
   font-weight: bold;
   font-family: Consolas, Monaco, andale mono, monospace;
+`
+
+const TypographyImage = styled.img`
+  height: 18px;
+  margin-top: 8px;
 `
