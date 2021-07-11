@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Footer } from './Footer'
 import { Header } from './Header'
+import { Heading } from './Heading'
 import { LineProgressBar } from './LineProgressBar'
 import { Section } from './Section'
 
@@ -13,6 +14,7 @@ export const HomePage = () => {
     <Container>
       <Header />
       <Section>
+        <Heading>Progress</Heading>
         <ProgressBarList>
           <LineProgressBar percent={25} />
           <LineProgressBar percent={65} />
@@ -20,18 +22,21 @@ export const HomePage = () => {
         </ProgressBarList>
       </Section>
       <Section>
+        <Heading>Sizing</Heading>
         <ProgressBarList>
           <LineProgressBar percent={25} width={150} />
           <LineProgressBar percent={25} width={200} />
         </ProgressBarList>
       </Section>
       <Section>
+        <Heading>Stripes</Heading>
         <ProgressBarList>
           <LineProgressBar stripe percent={25} />
           <LineProgressBar stripe percent={65} />
         </ProgressBarList>
       </Section>
       <Section>
+        <Heading>Rounding</Heading>
         <ProgressBarList>
           {roundBarPercents.map((value) => (
             <LineProgressBar percent={value} rounded={36} height={36} />
@@ -39,6 +44,7 @@ export const HomePage = () => {
         </ProgressBarList>
       </Section>
       <Section>
+        <Heading>Label</Heading>
         <ProgressBarList>
           <LineProgressBar
             label={(value) => <Label>{`${value}%`}</Label>}
