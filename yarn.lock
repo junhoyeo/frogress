@@ -1448,8 +1448,10 @@ __metadata:
     "@babel/plugin-transform-modules-commonjs": ^7.14.5
     "@babel/preset-react": ^7.14.5
     "@babel/preset-typescript": ^7.14.5
+    "@types/dedent": ^0.7.0
     "@types/jest": ^26.0.24
     "@types/react": ^17.0.14
+    dedent: ^0.7.0
     jest: ^27.0.6
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -1974,6 +1976,13 @@ __metadata:
   dependencies:
     "@babel/types": ^7.3.0
   checksum: 789c31dc1aa25697e5693ad45bcd6ca2b7e6b998bcc77b7d9bcba7004e4da0847e81701ca87edec162ef667a8973ea3655ee35d077cb3568c71d90939a8ef9d9
+  languageName: node
+  linkType: hard
+
+"@types/dedent@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@types/dedent@npm:0.7.0"
+  checksum: 8fec52e2072d734f547b9f77d689516423155e1895a0b174787e42ed616eaf7c3556189a90e6da254f43dad93489eed34dc7ad9715231281871674e31ff13f08
   languageName: node
   linkType: hard
 
