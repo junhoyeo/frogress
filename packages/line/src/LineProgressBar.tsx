@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useMemo, useRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Percent } from './Percent'
+import { useContainerWidth } from './useContainerWidth'
 
 export type LineProgressBarProps<T extends number> = {
   percent: Percent<T>
@@ -13,26 +14,6 @@ export type LineProgressBarProps<T extends number> = {
   progressColor?: string
   containerColor?: string
   label?: (value: Percent<T>) => void
-}
-
-const useContainerWidth = (
-  containerRef: React.MutableRefObject<HTMLDivElement | null>,
-  width: number | undefined,
-) => {
-  const [containerWidth, setContainerWidth] = useState<number>(0)
-
-  useEffect(() => {
-    if (!containerRef.current) {
-      return
-    }
-    if (width !== undefined) {
-      setContainerWidth(width)
-      return
-    }
-    setContainerWidth(containerRef.current.offsetWidth)
-  }, [width])
-
-  return containerWidth
 }
 
 export const LineProgressBar = <T extends number>({
