@@ -50,6 +50,10 @@ const Title = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 580px) {
+    font-size: 2.8rem;
+  }
 `
 const TitleSegment = styled.span`
   &:first-of-type {
