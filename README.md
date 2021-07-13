@@ -21,3 +21,20 @@ yarn add @frogress/line
 </a>
 
 > Documentation is TBD
+
+### Development
+
+```bash
+# 🖨 Clone git repository
+git clone https://github.com/junhoyeo/frogress
+cd frogress
+
+# 📦 Install depedencies
+yarn install
+
+# 🔨 Build @frogress/line
+yarn workspace @frogress/line build
+
+# 🏃‍♀️ Run development server for @frogress/docs
+yarn workspace @frogress/docs dev
+```
