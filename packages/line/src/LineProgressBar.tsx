@@ -19,9 +19,9 @@ export type LineProgressBarProps<T extends number> = {
 
 export const LineProgressBar = <T extends number>({
   percent,
-  rounded = 0,
+  rounded,
   stripe,
-  height = 16,
+  height,
   width,
   direction = 'left',
   progressColor,
@@ -63,7 +63,8 @@ export const LineProgressBar = <T extends number>({
 
 const Container = styled.div`
   width: 100%;
-  height: 32px;
+  height: 16px;
+  border-radius: 0;
   background-color: #e9ecef;
   position: relative;
   overflow: hidden;
