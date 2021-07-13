@@ -16,11 +16,16 @@ yarn add @frogress/line
 
 ## @frogress/line
 
-<a href="https://frogress.vercel.app">
-  <img alt="website-preview" src="./docs/images/website.png" width="820px" />
-</a>
+Documentation is TBD
 
-> Documentation is TBD
+## @frogress/docs
+
+<p align="center">
+  <a href="https://frogress.vercel.app">
+    <img alt="website-preview" src="./docs/images/website.png" width="520px" />
+  </a>
+  <blockquote align="center"><a href="https://frogress.vercel.app">📖 Documentation</a></blockquote>
+</p>
 
 ### Development
 
