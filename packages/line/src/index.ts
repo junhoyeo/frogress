@@ -1,1 +1,1 @@
-export { LineProgressBar } from './LineProgressBar'
+export { LineProgressBar, LineProgressBarProps } from './LineProgressBar'
