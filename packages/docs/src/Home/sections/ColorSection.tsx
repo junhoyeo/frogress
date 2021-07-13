@@ -98,6 +98,18 @@ const CompareContainer = styled.div`
   & > div:first-of-type {
     margin-right: 16px;
   }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+
+    & > div:first-of-type {
+      margin-right: 0;
+    }
+
+    & > div:not(:first-of-type) {
+      margin-top: 16px;
+    }
+  }
 `
 const CompareSection = styled.div`
   display: flex;
