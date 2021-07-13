@@ -86,7 +86,7 @@ const Progress = styled.div<ProgressProps>`
         #43a4ff 85%,
         #3179ff 98%
       );
-      width: ${containerWidth}px;
+      width: ${containerWidth === 0 ? '100%' : `${containerWidth}px`};
       ${direction}: ${offset}px;
     `};
 `
