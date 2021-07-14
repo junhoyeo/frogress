@@ -17,7 +17,7 @@ export type LineProgressBarProps<T extends number> = {
   containerColor?: string
   progressStyle?: React.CSSProperties
   containerStyle?: React.CSSProperties
-  label?: (value: Percent<T>) => void
+  label?: (value: Percent<T>) => React.ReactNode
 }
 
 export const LineProgressBar = <T extends number>({
