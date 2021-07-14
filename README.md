@@ -5,9 +5,9 @@
 
 > ❄️ The ultimate Line Progress Bar UI for React
 
-## @frogress/line
+# @frogress/line
 
-### 📦 Installation
+## 📦 Installation
 
 ```bash
 # Install peer depedencies
@@ -19,7 +19,7 @@ yarn add @frogress/line
 
 - `styled-components` will be replaced soon by React's internal `StyleSheet`(to reduce depedencies).
 
-### 🚀 Usage
+## 🚀 Usage
 
 ```tsx
 import { LineProgressBar } from '@frogress/line'
@@ -30,7 +30,7 @@ import { LineProgressBar } from '@frogress/line'
 `percent` is the **percentage of the progress bar**(`number` type value with a range of `0` to `100`).
 This property is required in TypeScript, but it will default to `0` if you ignore it.
 
-#### 👓 Compile-time Type checking
+### 👓 Compile-time Type checking
 ```diff
 - <LineProgressBar percent={-32} />
 - <LineProgressBar percent={-1} />
@@ -45,24 +45,24 @@ This property is required in TypeScript, but it will default to `0` if you ignor
 
 The type is enforced so that **only integers within the correct range are allowed.**
 
-### 💡 What problem does this solve?
+## 💡 What problem does this solve?
 
 ![Compared](./docs/images/compared.png)
 
 Most existing line progress bar UI implementations do not support gradation or rounded edges.
 
-### 🌸 Styling
+## 🌸 Styling
 TBD
 
-#### Size
+### Size
 
-#### Color
+### Color
 
-#### Rounding
+### Rounding
 
-#### Direction
+### Direction
 
-## @frogress/docs
+# @frogress/docs
 
 <p align="center">
 
@@ -72,7 +72,7 @@ TBD
   <blockquote align="center"><a href="https://frogress.vercel.app">📖 Documentation</a></blockquote>
 </p>
 
-### Development
+## Development
 
 ```bash
 # 🖨 Clone git repository
