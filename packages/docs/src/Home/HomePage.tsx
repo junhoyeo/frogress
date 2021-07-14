@@ -39,7 +39,7 @@ export const HomePage = () => {
   return (
     <Container>
       <Header
-        onClickCTA={() =>
+        onEvent={() =>
           amplitudeRef.current?.logEvent('click_github_button', {
             title: 'View on GitHub',
           })
@@ -52,7 +52,13 @@ export const HomePage = () => {
       <SizingSection />
       <DirectionSection />
       <LabelSection />
-      <Footer />
+      <Footer
+        onEvent={() =>
+          amplitudeRef.current?.logEvent('click_author_link', {
+            title: 'Made by @junhoyeo',
+          })
+        }
+      />
     </Container>
   )
 }

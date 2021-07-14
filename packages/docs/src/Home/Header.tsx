@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { copyToClipboard } from './utils/clipboard'
 
 type HeaderProps = {
-  onClickCTA?: () => Promise<void>
+  onEvent?: () => Promise<void>
 }
 
-export const Header: React.FC<HeaderProps> = ({ onClickCTA }) => {
+export const Header: React.FC<HeaderProps> = ({ onEvent }) => {
   const [isCopied, setCopied] = useState<boolean>(false)
 
   const onClickCopyInstallCommand = () => {
@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ onClickCTA }) => {
       />
       <Button
         onClick={async () => {
-          await onClickCTA()
+          await onEvent()
           const win = window.open(
             'https://github.com/junhoyeo/frogress',
             '_blank',

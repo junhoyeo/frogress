@@ -1,10 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const Footer = () => {
+type FooterProps = {
+  onEvent: () => Promise<void>
+}
+
+export const Footer: React.FC<FooterProps> = ({ onEvent }) => {
   return (
     <Container>
-      <GitHubLink href="https://github.com/junhoyeo" target="_blank">
+      <GitHubLink
+        href="https://github.com/junhoyeo"
+        onClick={async (event) => {
+          event.preventDefault()
+          onEvent()
+          const win = window.open('https://github.com/junhoyeo', '_blank')
+          win.focus()
+        }}
+        target="_blank"
+      >
         Made by <CreatorName>@junhoyeo</CreatorName>
       </GitHubLink>
     </Container>
