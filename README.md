@@ -49,7 +49,9 @@ The type is enforced so that **only integers within the correct range are allowe
 
 ![Compared](./docs/images/compared.png)
 
-Most existing line progress bar UI implementations do not support gradation or rounded edges.
+Lots of existing line progress bar UIs do not support color gradients or rounded edges.
+
+Most implementations it wrong. The upper-right image is the **most common mistake with inconsistent behavior;** Gradients are shrunk with the progress width, border-radius is working strangely with small values.
 
 ## 🌸 Styling
 TBD
