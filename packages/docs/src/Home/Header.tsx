@@ -3,7 +3,11 @@ import styled from 'styled-components'
 
 import { copyToClipboard } from './utils/clipboard'
 
-export const Header = () => {
+type HeaderProps = {
+  onClickCTA?: () => Promise<void>
+}
+
+export const Header: React.FC<HeaderProps> = ({ onClickCTA }) => {
   const [isCopied, setCopied] = useState<boolean>(false)
 
   const onClickCopyInstallCommand = () => {
@@ -29,7 +33,18 @@ export const Header = () => {
           !isCopied ? 'copy-to-clipboard' : 'copied'
         }.png`}
       />
-      <Button>View on GitHub</Button>
+      <Button
+        onClick={async () => {
+          await onClickCTA()
+          const win = window.open(
+            'https://github.com/junhoyeo/frogress',
+            '_blank',
+          )
+          win.focus()
+        }}
+      >
+        View on GitHub
+      </Button>
     </Container>
   )
 }

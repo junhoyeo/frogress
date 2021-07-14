@@ -5,6 +5,30 @@ __metadata:
   version: 4
   cacheKey: 7
 
+"@amplitude/types@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@amplitude/types@npm:1.7.0"
+  checksum: fbded436c039caf3bc7d26fff5c1fc79e377e4bff09e0416cb596345ea61fc120c2604e13a3989bec45a3c59f7d7ce9791d8c09214532eb88cb9c2a5e5aea374
+  languageName: node
+  linkType: hard
+
+"@amplitude/ua-parser-js@npm:0.7.24":
+  version: 0.7.24
+  resolution: "@amplitude/ua-parser-js@npm:0.7.24"
+  checksum: c91c6e08960c737b54b1d727b9b7be70fa39d6c6d896eb40040213e0785708cd032481458c97a435e28bf21f1a06527dc45aab22765cb536d757a848d1dade41
+  languageName: node
+  linkType: hard
+
+"@amplitude/utils@npm:^1.0.5":
+  version: 1.7.0
+  resolution: "@amplitude/utils@npm:1.7.0"
+  dependencies:
+    "@amplitude/types": ^1.7.0
+    tslib: ^1.9.3
+  checksum: 23ea2b51ac7c28ac2731fb3ca67925fc0a522e2a59652c3e921d0531ad38c575ecf892918727be0d7adc5df402ea67ae5eca502612b487b0bf564249c32a5e75
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:7.12.11":
   version: 7.12.11
   resolution: "@babel/code-frame@npm:7.12.11"
@@ -1426,6 +1450,7 @@ __metadata:
     "@types/react": ^17.0.11
     "@types/react-dom": ^17.0.8
     "@types/styled-components": ^5.1.10
+    amplitude-js: ^8.3.1
     babel-plugin-prismjs: ^2.1.0
     babel-plugin-styled-components: ^1.13.1
     dedent: ^0.7.0
@@ -2232,6 +2257,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"amplitude-js@npm:^8.3.1":
+  version: 8.3.1
+  resolution: "amplitude-js@npm:8.3.1"
+  dependencies:
+    "@amplitude/ua-parser-js": 0.7.24
+    "@amplitude/utils": ^1.0.5
+    blueimp-md5: ^2.10.0
+    query-string: 5
+  checksum: d067016861ca2dcb608107a9eeb6ec9f6ea9addc8ffe8898b0da17d909c42f86fa4ed9ef8d932aaebb853a5ebf07aa122df6d1e368748d7711025f3da9dd2330
+  languageName: node
+  linkType: hard
+
 "anser@npm:1.4.9":
   version: 1.4.9
   resolution: "anser@npm:1.4.9"
@@ -2562,6 +2599,13 @@ __metadata:
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
   checksum: 0f5f5685f344b035c4f98d06fa288962d262294a1441c1481ac99e895037bde971ebe6e09a4bd8aa18ab2525bfc00b1ad4af71dbf9e933a72e0df6919706a728
+  languageName: node
+  linkType: hard
+
+"blueimp-md5@npm:^2.10.0":
+  version: 2.18.0
+  resolution: "blueimp-md5@npm:2.18.0"
+  checksum: cc115b7e0f5573a26a3a6af699f98f7d29477bd529ffaee06ba8dcb2b470f88b0e762d09df771bc356fcdcfdb0d1d02cd8529889f32b03c7d3baf42817c46d67
   languageName: node
   linkType: hard
 
@@ -3353,6 +3397,13 @@ __metadata:
   version: 10.3.1
   resolution: "decimal.js@npm:10.3.1"
   checksum: e042c676c7a934e5a2c4e02f2562e0e0d752c6cd8f933f4030f8540dd4c7074ba035e329df46c0cc46f0c9190d1804c366d0be46ea6f94af64e0096d2730b22b
+  languageName: node
+  linkType: hard
+
+"decode-uri-component@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "decode-uri-component@npm:0.2.0"
+  checksum: d8cb28c33f7b0a70b159b5fa126aee821ba090396689bd46ad2c423c3a658c504d2743ab18060fd5ed1cae5377bdd3632760a8e98ba920ff49637d43dc6a9687
   languageName: node
   linkType: hard
 
@@ -6284,6 +6335,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"query-string@npm:5":
+  version: 5.1.1
+  resolution: "query-string@npm:5.1.1"
+  dependencies:
+    decode-uri-component: ^0.2.0
+    object-assign: ^4.1.0
+    strict-uri-encode: ^1.0.0
+  checksum: 68d4ad519a9fc288bc9ade3e515ce89a6806b88fd92e1459277570dca753665bb1b43e4cc7747012fc3b19b3d4283a724d519b568859943f57aaa3668c4d5b4b
+  languageName: node
+  linkType: hard
+
 "querystring-es3@npm:0.2.1, querystring-es3@npm:^0.2.0":
   version: 0.2.1
   resolution: "querystring-es3@npm:0.2.1"
@@ -6896,6 +6958,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"strict-uri-encode@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "strict-uri-encode@npm:1.1.0"
+  checksum: 6c80f6998a45414d7c124772383cc10ce7bd22586af80762407cded1569666564fb8c0a4c9c997ac39a1116d46dfffc5d57135e759a0acb66a4da1191f5a3a4a
+  languageName: node
+  linkType: hard
+
 "string-hash@npm:1.1.3":
   version: 1.1.3
   resolution: "string-hash@npm:1.1.3"
@@ -7287,6 +7356,13 @@ __metadata:
     typescript:
       optional: true
   checksum: 78341a27939de565e2754ff65ebb689743c16e3295528089d143c08d91842cf9029c3d6b3c95a9a20854a114a7904329d02c710d63f7ce4dbf671b8a3e560ac1
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^1.9.3":
+  version: 1.14.1
+  resolution: "tslib@npm:1.14.1"
+  checksum: f44fe7f216946b17d3e3074df3746372703cf24e9127b4c045511456e8e4bf25515fb0a1bb3937676cc305651c5d4fcb6377b0588a4c6a957e748c4c28905d17
   languageName: node
   linkType: hard
 
