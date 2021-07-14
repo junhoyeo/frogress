@@ -13,7 +13,10 @@ export const DirectionSection = () => {
   return (
     <Section>
       <Heading>Direction</Heading>
-      <Paragraph>Gradient color is not changed.</Paragraph>
+      <Paragraph>
+        Only the default gradient's direction is changed. Custom properties have
+        no effect.
+      </Paragraph>
       <ProgressBarList>
         <LineProgressBar percent={65} direction="left" />
         <LineProgressBar percent={65} direction="right" />
