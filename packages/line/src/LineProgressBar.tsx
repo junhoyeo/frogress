@@ -12,8 +12,11 @@ export type LineProgressBarProps<T extends number> = {
   height?: number
   width?: number
   direction?: 'left' | 'right'
+  className?: string
   progressColor?: string
   containerColor?: string
+  progressStyle?: React.CSSProperties
+  containerStyle?: React.CSSProperties
   label?: (value: Percent<T>) => void
 }
 
@@ -24,8 +27,11 @@ export const LineProgressBar = <T extends number>({
   height,
   width,
   direction = 'left',
+  className,
   progressColor,
   containerColor,
+  progressStyle,
+  containerStyle,
   label,
 }: LineProgressBarProps<T>) => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -38,13 +44,14 @@ export const LineProgressBar = <T extends number>({
 
   return (
     <Container
-      className="container"
+      className={`container ${className}`}
       ref={containerRef}
       style={{
         width,
         height,
         borderRadius: rounded,
         background: containerColor,
+        ...containerStyle,
       }}
     >
       <Progress
@@ -52,7 +59,11 @@ export const LineProgressBar = <T extends number>({
         containerWidth={containerWidth}
         direction={direction}
         offset={progressOffset}
-        style={{ borderRadius: rounded, background: progressColor }}
+        style={{
+          borderRadius: rounded,
+          background: progressColor,
+          ...progressStyle,
+        }}
       >
         {stripe && <Stripe />}
       </Progress>
