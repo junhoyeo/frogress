@@ -30,6 +30,22 @@ import { LineProgressBar } from '@frogress/line'
 `percent` is the **percentage of the progress bar**(`number` type value with a range of `0` to `100`).
 This property is required in TypeScript, but it will default to `0` if you ignore it.
 
+## 💡 What problem does this solve?
+
+### Examples of mistakes
+
+| When progress indicator is short | When progress indicator is long |
+|:----: | :---: |
+| ![Toss Mission Point](docs/images/toss-short.jpeg) | ![Toss Mission Point](docs/images/toss-long.jpeg) |
+
+### Comparison
+
+![Compared](./docs/images/compared.png)
+
+Lots of existing line progress bar UIs do not support color gradients or rounded edges.
+
+Most implementations it wrong. The upper-left image is the **most common mistake with inconsistent behavior;** Gradients are shrunk with the progress width, border-radius is working strangely with small values.
+
 ### 👓 Compile-time Type checking
 ```diff
 - <LineProgressBar percent={-32} />
@@ -44,14 +60,6 @@ This property is required in TypeScript, but it will default to `0` if you ignor
 ```
 
 The type is enforced so that **only integers within the correct range are allowed.**
-
-## 💡 What problem does this solve?
-
-![Compared](./docs/images/compared.png)
-
-Lots of existing line progress bar UIs do not support color gradients or rounded edges.
-
-Most implementations it wrong. The upper-left image is the **most common mistake with inconsistent behavior;** Gradients are shrunk with the progress width, border-radius is working strangely with small values.
 
 ## 🌸 Styling
 TBD
