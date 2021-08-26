@@ -32,7 +32,7 @@ This property is required in TypeScript, but it will default to `0` if you ignor
 
 ## 💡 What problem does this solve?
 
-### Examples of common mistakes
+### Examples of common traditional interfaces
 
 | When progress indicator is short | When progress indicator is long |
 |:----: | :---: |
