@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
@@ -14,6 +15,7 @@ export const Header: React.FC<HeaderProps> = ({ onEvent }) => {
     const installCommand = 'yarn add @frogress/line'
     copyToClipboard(installCommand)
     setCopied(true)
+    setTimeout(() => setCopied((prev) => !prev), 1000)
   }
 
   return (
@@ -28,11 +30,14 @@ export const Header: React.FC<HeaderProps> = ({ onEvent }) => {
       <InstallCommandContainer onClick={onClickCopyInstallCommand}>
         <InstallCommand>$ yarn add @frogress/line</InstallCommand>
       </InstallCommandContainer>
-      <TypographyImage
-        src={`/images/typography-${
-          !isCopied ? 'copy-to-clipboard' : 'copied'
-        }.png`}
-      />
+      <AnimatePresence exitBeforeEnter>
+        <TypographyImage
+          key={isCopied.toString()}
+          src={`/images/typography-${
+            !isCopied ? 'copy-to-clipboard' : 'copied'
+          }.png`}
+        />
+      </AnimatePresence>
       <Button
         onClick={async () => {
           await onEvent()
@@ -124,7 +129,20 @@ const InstallCommand = styled.span`
   font-family: Consolas, Monaco, andale mono, monospace;
 `
 
-const TypographyImage = styled.img`
+const TypographyImage = styled(motion.img).attrs({
+  transition: {
+    type: 'spring',
+    duration: 0.9,
+  },
+  initial: {
+    opacity: 0,
+    transform: 'translate3d(0, 15px, 0)',
+  },
+  animate: {
+    opacity: 1,
+    transform: 'translate3d(0, 0px, 0)',
+  },
+})`
   height: 18px;
   margin-top: 8px;
 `
