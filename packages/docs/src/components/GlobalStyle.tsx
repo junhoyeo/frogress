@@ -29,4 +29,9 @@ export const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     cursor: pointer;
   }
+
+  &::selection {
+    color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(29, 37, 92, 0.95);
+  }
 `
