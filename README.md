@@ -11,13 +11,14 @@
 
 ```bash
 # Install peer depedencies
-yarn add react react-dom styled-components
+yarn add react react-dom styled-components framer-motion
 
 # Install Frogress's Line Progress Bar component
 yarn add @frogress/line
 ```
 
 - `styled-components` will be replaced soon by React's internal `StyleSheet`(to reduce depedencies).
+- `framer-motion` should be an optional depedency of those who wish to use `AnimatedLineProgressBar` of [#3](https://github.com/junhoyeo/frogress/pull/3). Will be fixed soon!
 
 ## 🚀 Usage
 
@@ -47,6 +48,7 @@ Lots of existing line progress bar UIs do not support color gradients or rounded
 Most implementations it wrong. The upper-left image is the **most common mistake with inconsistent behavior;** Gradients are shrunk with the progress width, border-radius is working strangely with small values.
 
 ### 👓 Compile-time Type checking
+
 ```diff
 - <LineProgressBar percent={-32} />
 - <LineProgressBar percent={-1} />
@@ -62,6 +64,7 @@ Most implementations it wrong. The upper-left image is the **most common mistake
 The type is enforced so that **only integers within the correct range are allowed.**
 
 ## 🌸 Styling
+
 TBD
 
 ### Size
