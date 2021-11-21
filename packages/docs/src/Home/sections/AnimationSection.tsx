@@ -1,25 +1,87 @@
+import dedent from 'dedent'
+import { motion } from 'framer-motion'
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { AnimatedLineProgressBar } from '@frogress/line'
 
+import { HighlightedCode } from '../../components/HighlightedCode'
 import { Heading } from '../Heading'
 import { ProgressBarList } from '../ProgressBarList'
 import { Section } from '../Section'
 
+enum EasingFunction {
+  'linear (default)' = 'linear',
+  easeIn = 'easeIn',
+  easeOut = 'easeOut',
+  easeInOut = 'easeInOut',
+  circIn = 'circIn',
+  circOut = 'circOut',
+  circInOut = 'circInOut',
+  backIn = 'backIn',
+  backOut = 'backOut',
+  backInOut = 'backInOut',
+  anticipate = 'anticipate',
+}
+
 const getRandomArbitrary = (min: number, max: number): number => {
-  return Math.random() * (max - min) + min
+  return Math.round(Math.random() * (max - min) + min)
 }
 
 export const AnimationSection = () => {
-  const [random, setRandom] = useState<number>(0)
+  const [random, setRandom] = useState<number>(48)
+  const [easing, setEasing] = useState<EasingFunction>(
+    EasingFunction['linear (default)'],
+  )
 
   return (
     <Section>
       <Heading>Animation</Heading>
       <ProgressBarList>
-        <AnimatedLineProgressBar percent={random} />
+        <AnimatedLineProgressBar percent={random} transition={{ easing }} />
       </ProgressBarList>
+      <OptionList>
+        {Object.entries(EasingFunction).map(([key, value]) => {
+          const checked = easing === value
+          return (
+            <Option
+              onClick={() => {
+                setEasing(value)
+                const tmp = random
+                setRandom(0)
+                setTimeout(() => {
+                  setRandom(tmp || getRandomArbitrary(0, 100))
+                }, 500)
+              }}
+            >
+              <Radio
+                checked={checked}
+                animate={{
+                  border: !checked ? '1px solid #9ba3a8' : '1px solid #1fd6ff',
+                  background: !checked ? 'rgba(255, 255, 255, 0)' : '#1fd6ff',
+                }}
+              >
+                {checked && <RadioInnerCircle />}
+              </Radio>
+              <motion.span
+                animate={{ color: !checked ? '#9ba3a8' : '#1fa2ff' }}
+              >
+                {key}
+              </motion.span>
+            </Option>
+          )
+        })}
+      </OptionList>
+      <HighlightedCode highlightLines={[2]}>
+        {dedent`
+          import { AnimatedLineProgressBar } from '@frogress/line'
+
+          <AnimatedLineProgressBar
+            percent={${random}}
+            transition={{ easing: '${easing}' }}
+          />
+        `}
+      </HighlightedCode>
       <BumpButton onClick={() => setRandom(getRandomArbitrary(0, 100))}>
         <span role="img" aria-label="man-cartwheeling">
           🤸‍♂️
@@ -29,6 +91,52 @@ export const AnimationSection = () => {
     </Section>
   )
 }
+
+const OptionList = styled.ul`
+  margin: 0;
+  margin-top: 24px;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+`
+const Option = styled.li`
+  margin-right: 16px;
+  margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+
+  & > span {
+    margin-left: 6px;
+  }
+`
+type RadioProps = {
+  checked?: boolean
+}
+const Radio = styled(motion.div)<RadioProps>`
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+const RadioInnerCircle = styled(motion.div).attrs({
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+})`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 12px rgba(20, 31, 181, 0.85);
+`
 
 const BumpButton = styled.button`
   margin-top: 16px;
