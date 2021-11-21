@@ -100,4 +100,12 @@ yarn workspace @frogress/line build
 
 # 🏃‍♀️ Run development server for @frogress/docs
 yarn workspace @frogress/docs dev
+
+# 🚀 Build & Deploy
+git commit -m "@frogress/line@x.y.z"
+git tag x.y.z
+yarn workspace @frogress/line build
+yarn workspace @frogress/line npm publish --access=public
+git push --tags
+git push
 ```
