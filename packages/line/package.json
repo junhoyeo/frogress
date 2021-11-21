@@ -1,7 +1,7 @@
 {
   "name": "@frogress/line",
   "description": "The ultimate Line Progress Bar UI for React",
-  "version": "1.0.1",
+  "version": "1.1.0-canary.0",
   "author": "Junho Yeo <hanaro0704@gmail.com>",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,6 +16,7 @@
     "directory": "packages/line"
   },
   "peerDependencies": {
+    "framer-motion": "^5.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.0"

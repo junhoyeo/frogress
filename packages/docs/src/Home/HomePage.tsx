@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Footer } from './Footer'
 import { Header } from './Header'
+import { AnimationSection } from './sections/AnimationSection'
 import { ColorSection } from './sections/ColorSection'
 import { DirectionSection } from './sections/DirectionSection'
 import { LabelSection } from './sections/LabelSection'
@@ -52,6 +53,7 @@ export const HomePage = () => {
       <SizingSection />
       <DirectionSection />
       <LabelSection />
+      <AnimationSection />
       <Footer
         onEvent={() =>
           amplitudeRef.current?.logEvent('click_author_link', {
