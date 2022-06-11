@@ -3097,6 +3097,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@frogress/docs", "workspace:packages/docs"],\
             ["@frogress/line", "virtual:ca310f4f8cfd90d027a8feb4dd7d254092c4368b116890450cbdddd2239046d6248a32ea7e5a008fbc4fdd3354440a5375bc22d90daed5bd4a2d9a38854b4f25#workspace:packages/line"],\
+            ["@types/amplitude-js", "npm:8.16.1"],\
             ["@types/node", "npm:17.0.42"],\
             ["@types/react", "npm:17.0.45"],\
             ["@types/react-dom", "npm:17.0.17"],\
@@ -3994,6 +3995,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@trysound-sax-npm-0.2.0-9f763d0295-11226c39b5.zip/node_modules/@trysound/sax/",\
           "packageDependencies": [\
             ["@trysound/sax", "npm:0.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/amplitude-js", [\
+        ["npm:8.16.1", {\
+          "packageLocation": "./.yarn/cache/@types-amplitude-js-npm-8.16.1-dea9173037-965a114096.zip/node_modules/@types/amplitude-js/",\
+          "packageDependencies": [\
+            ["@types/amplitude-js", "npm:8.16.1"]\
           ],\
           "linkType": "HARD"\
         }]\

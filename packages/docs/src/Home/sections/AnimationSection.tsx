@@ -45,6 +45,7 @@ export const AnimationSection = () => {
           const checked = easing === value
           return (
             <Option
+              key={key}
               onClick={() => {
                 setEasing(value)
                 const tmp = random

@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 
+import { Analytics } from '../utils/Analytics'
 import { Footer } from './Footer'
 import { Header } from './Header'
 import { AnimationSection } from './sections/AnimationSection'
@@ -12,36 +13,18 @@ import { RoundingSection } from './sections/RoundingSection'
 import { SizingSection } from './sections/SizingSection'
 import { StripeSection } from './sections/StripeSection'
 
+Analytics.initialize()
+
 export const HomePage = () => {
-  const amplitudeRef = useRef<any>()
-
   useEffect(() => {
-    if (typeof window?.navigator !== 'undefined') {
-      const init = async () => {
-        const amplitude = await import('amplitude-js')
-        amplitude.init('2cd1c11ac9ebecba5cc30de1ef118e39', null, {
-          includeReferrer: true,
-          includeUtm: true,
-          includeGclid: true,
-        })
-        amplitude.setUserProperties({
-          is_debug: process.env.NODE_ENV !== 'production',
-        })
-        amplitude.setVersionName('Web')
-        amplitude.logEvent('view_landing_page')
-
-        amplitudeRef.current = amplitude.getInstance()
-      }
-
-      init()
-    }
+    Analytics.logEvent('view_landing_page', undefined)
   }, [])
 
   return (
     <Container>
       <Header
         onEvent={() =>
-          amplitudeRef.current?.logEvent('click_github_button', {
+          Analytics.logEvent('click_github_button', {
             title: 'View on GitHub',
           })
         }
@@ -56,7 +39,7 @@ export const HomePage = () => {
       <AnimationSection />
       <Footer
         onEvent={() =>
-          amplitudeRef.current?.logEvent('click_author_link', {
+          Analytics.logEvent('click_author_link', {
             title: 'Made by @junhoyeo',
           })
         }
