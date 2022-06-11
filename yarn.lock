@@ -1801,6 +1801,7 @@ __metadata:
   resolution: "@frogress/docs@workspace:packages/docs"
   dependencies:
     "@frogress/line": "workspace:^"
+    "@types/amplitude-js": ^8.16.1
     "@types/node": ^17.0.42
     "@types/react": ^17.0.45
     "@types/react-dom": ^17.0.17
@@ -2451,6 +2452,13 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
+  languageName: node
+  linkType: hard
+
+"@types/amplitude-js@npm:^8.16.1":
+  version: 8.16.1
+  resolution: "@types/amplitude-js@npm:8.16.1"
+  checksum: 965a114096bd45cca80efec0a89be22007a9f799d47aa1ba97c90d7be1cfdc6a20257a4ddc416ac9f3ee2396c3f1c1562fb8e34a4558d6dc8f0a24e58c5b7fe1
   languageName: node
   linkType: hard
 
