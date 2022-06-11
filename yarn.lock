@@ -1910,6 +1910,7 @@ __metadata:
     "@types/dedent": ^0.7.0
     "@types/jest": ^28.1.1
     "@types/react": ^17.0.45
+    "@types/styled-components": ^5.1.25
     dedent: ^0.7.0
     framer-motion: ^6.3.11
     jest: ^28.1.1

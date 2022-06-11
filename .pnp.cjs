@@ -3302,6 +3302,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/dedent", "npm:0.7.0"],\
             ["@types/jest", "npm:28.1.1"],\
             ["@types/react", "npm:17.0.45"],\
+            ["@types/styled-components", "npm:5.1.25"],\
             ["dedent", "npm:0.7.0"],\
             ["framer-motion", "virtual:48d1427ba9143300e278d46ccb891700c8ab1fe9b968962fc693c04b51070956cc7d6b850e554d05c328aba80d4b1951624d25e9c5084741d2ba6d0ebd4a7af1#npm:6.3.11"],\
             ["jest", "virtual:64f00bd0ecb5431b5066d832d39ada9c9784b996b1047bae7ab0befac66d0e29581401c7c098ed2879d1e375419db48a0c1efbc1421d516fbe19da7dfcc758b3#npm:28.1.1"],\
