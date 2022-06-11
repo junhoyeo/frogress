@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const useContainerWidth = (
   containerRef: React.MutableRefObject<HTMLDivElement | null>,
