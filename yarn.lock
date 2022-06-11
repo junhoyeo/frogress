@@ -1904,7 +1904,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@frogress/docs@workspace:packages/docs"
   dependencies:
-    "@frogress/line": "workspace:packages/line"
+    "@frogress/line": "workspace:^"
     "@types/node": ^15.14.9
     "@types/react": ^17.0.45
     "@types/react-dom": ^17.0.17
@@ -1928,7 +1928,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@frogress/line@workspace:packages/line":
+"@frogress/line@workspace:^, @frogress/line@workspace:packages/line":
   version: 0.0.0-use.local
   resolution: "@frogress/line@workspace:packages/line"
   dependencies:
