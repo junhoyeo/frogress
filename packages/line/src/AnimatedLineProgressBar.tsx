@@ -27,10 +27,13 @@ export const AnimatedLineProgressBar = <T extends number>({
   const containerRef = useRef<HTMLDivElement>(null)
   const containerWidth = useContainerWidth(containerRef, width)
 
-  const progressOffset = useMemo(
-    () => -(containerWidth / 100) * (100 - percent),
-    [containerWidth, percent],
-  )
+  const progressOffset = useMemo(() => {
+    const offset = -(containerWidth / 100) * (100 - percent)
+    if (isNaN(offset)) {
+      return 0
+    }
+    return offset
+  }, [containerWidth, percent])
 
   return (
     <Container
