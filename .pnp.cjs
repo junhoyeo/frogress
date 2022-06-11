@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["csstype", "npm:3.1.0"],\
             ["prettier", "npm:2.6.2"],\
             ["typescript", "patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"]\
           ],\
@@ -3135,7 +3136,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:64f00bd0ecb5431b5066d832d39ada9c9784b996b1047bae7ab0befac66d0e29581401c7c098ed2879d1e375419db48a0c1efbc1421d516fbe19da7dfcc758b3#npm:28.1.1"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:ca310f4f8cfd90d027a8feb4dd7d254092c4368b116890450cbdddd2239046d6248a32ea7e5a008fbc4fdd3354440a5375bc22d90daed5bd4a2d9a38854b4f25#npm:17.0.2"],\
-            ["react-is", "npm:18.1.0"],\
+            ["react-is", "npm:17.0.2"],\
             ["styled-components", "virtual:ca310f4f8cfd90d027a8feb4dd7d254092c4368b116890450cbdddd2239046d6248a32ea7e5a008fbc4fdd3354440a5375bc22d90daed5bd4a2d9a38854b4f25#npm:5.3.5"],\
             ["typescript", "patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"]\
           ],\
@@ -3164,7 +3165,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:64f00bd0ecb5431b5066d832d39ada9c9784b996b1047bae7ab0befac66d0e29581401c7c098ed2879d1e375419db48a0c1efbc1421d516fbe19da7dfcc758b3#npm:28.1.1"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:ca310f4f8cfd90d027a8feb4dd7d254092c4368b116890450cbdddd2239046d6248a32ea7e5a008fbc4fdd3354440a5375bc22d90daed5bd4a2d9a38854b4f25#npm:17.0.2"],\
-            ["react-is", "npm:18.1.0"],\
+            ["react-is", "npm:17.0.2"],\
             ["styled-components", "virtual:48d1427ba9143300e278d46ccb891700c8ab1fe9b968962fc693c04b51070956cc7d6b850e554d05c328aba80d4b1951624d25e9c5084741d2ba6d0ebd4a7af1#npm:5.3.5"],\
             ["typescript", "patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"]\
           ],\
@@ -4097,7 +4098,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-hoist-non-react-statics-npm-3.3.1-c0081332b2-2c0778570d.zip/node_modules/@types/hoist-non-react-statics/",\
           "packageDependencies": [\
             ["@types/hoist-non-react-statics", "npm:3.3.1"],\
-            ["@types/react", "npm:17.0.14"],\
+            ["@types/react", "npm:17.0.45"],\
             ["hoist-non-react-statics", "npm:3.3.2"]\
           ],\
           "linkType": "HARD"\
@@ -4196,16 +4197,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/react", [\
-        ["npm:17.0.14", {\
-          "packageLocation": "./.yarn/cache/@types-react-npm-17.0.14-e58a4bc32c-ca2eca8f33.zip/node_modules/@types/react/",\
-          "packageDependencies": [\
-            ["@types/react", "npm:17.0.14"],\
-            ["@types/prop-types", "npm:15.7.4"],\
-            ["@types/scheduler", "npm:0.16.2"],\
-            ["csstype", "npm:3.0.8"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:17.0.45", {\
           "packageLocation": "./.yarn/cache/@types-react-npm-17.0.45-09fff34e88-3cc13a0282.zip/node_modules/@types/react/",\
           "packageDependencies": [\
@@ -4251,7 +4242,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/styled-components", "npm:5.1.25"],\
             ["@types/hoist-non-react-statics", "npm:3.3.1"],\
-            ["@types/react", "npm:17.0.14"],\
+            ["@types/react", "npm:17.0.45"],\
             ["csstype", "npm:3.0.8"]\
           ],\
           "linkType": "HARD"\
@@ -5495,6 +5486,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["csstype", "npm:3.0.8"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:3.1.0", {\
+          "packageLocation": "./.yarn/cache/csstype-npm-3.1.0-0e405212e2-644e986cef.zip/node_modules/csstype/",\
+          "packageDependencies": [\
+            ["csstype", "npm:3.1.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["debug", [\
@@ -6040,6 +6038,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["frogress", "workspace:."],\
+            ["csstype", "npm:3.1.0"],\
             ["prettier", "npm:2.6.2"],\
             ["typescript", "patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"]\
           ],\
@@ -8804,7 +8803,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["hoist-non-react-statics", "npm:3.3.2"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:ca310f4f8cfd90d027a8feb4dd7d254092c4368b116890450cbdddd2239046d6248a32ea7e5a008fbc4fdd3354440a5375bc22d90daed5bd4a2d9a38854b4f25#npm:17.0.2"],\
-            ["react-is", "npm:18.1.0"],\
+            ["react-is", "npm:17.0.2"],\
             ["shallowequal", "npm:1.1.0"],\
             ["supports-color", "npm:5.5.0"]\
           ],\
